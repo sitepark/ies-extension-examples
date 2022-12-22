@@ -1,0 +1,5 @@
+# Query Root
+extend type Query {
+	# Example-Function
+	ping: String
+}

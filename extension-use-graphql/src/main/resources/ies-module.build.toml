@@ -1,0 +1,7 @@
+id="${project.artifactId}"
+name="${project.name}"
+description="${project.description}"
+type="EXTENSION"
+packaging="jar"
+version="${project.version}"
+build_date=${build.timestamp}
