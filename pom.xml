@@ -14,7 +14,7 @@
 		<junit.version>5.9.0</junit.version>
 		<log4j.version>2.19.0</log4j.version>
 		<junit.version>5.8.2</junit.version>
-		<spotbugs.version>4.6.0</spotbugs.version>
+		<spotbugs.version>4.7.3</spotbugs.version>
 		<ies.version>3.8-SNAPSHOT</ies.version>
 
 		<additionalparam>-Xdoclint:none</additionalparam>
