@@ -49,6 +49,17 @@
 		<url>https://github.com/sitepark-com/ies-extension-examples</url>
 	</scm>
 
+	<repositories>
+		<repository>
+			<id>ossrh</id>
+			<name>OSS Repository Hosting (Snapshots)</name>
+			<url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
 	<dependencyManagement>
 		<dependencies>
 
