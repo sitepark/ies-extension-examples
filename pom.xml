@@ -13,7 +13,7 @@
 	<properties>
 		<log4j.version>2.20.0</log4j.version>
 		<junit.version>5.10.0</junit.version>
-		<spotbugs.version>4.7.3</spotbugs.version>
+		<spotbugs.version>4.8.0</spotbugs.version>
 		<ies.version>3.8-SNAPSHOT</ies.version>
 
 		<additionalparam>-Xdoclint:none</additionalparam>
