@@ -11,7 +11,7 @@
 	<description>Various examples of how these extensions can be used.</description>
 
 	<properties>
-		<log4j.version>2.20.0</log4j.version>
+		<log4j.version>2.21.0</log4j.version>
 		<junit.version>5.10.0</junit.version>
 		<spotbugs.version>4.8.0</spotbugs.version>
 		<ies.version>3.8-SNAPSHOT</ies.version>
