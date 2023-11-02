@@ -5,35 +5,10 @@
 
 	<groupId>com.sitepark.ies.extensions.examples</groupId>
 	<artifactId>ies-extension-examples</artifactId>
-	<version>1.0-SNAPSHOT</version>
+	<version>1.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>IES extension examples</name>
 	<description>Various examples of how these extensions can be used.</description>
-
-	<properties>
-		<log4j.version>2.21.1</log4j.version>
-		<junit.version>5.10.0</junit.version>
-		<spotbugs.version>4.8.0</spotbugs.version>
-		<ies.version>3.8-SNAPSHOT</ies.version>
-
-		<additionalparam>-Xdoclint:none</additionalparam>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<file.encoding>UTF-8</file.encoding>
-		<maven.compiler.release>11</maven.compiler.release>
-	</properties>
-
-	<modules>
-		<module>extension-use-events</module>
-		<module>extension-use-graphql</module>
-	</modules>
-
-	<developers>
-		<developer>
-			<id>veltrup</id>
-			<name>Holger Veltrup</name>
-			<email>veltrup@sitepark.com</email>
-		</developer>
-	</developers>
 
 	<licenses>
 		<license>
@@ -42,10 +17,45 @@
 		</license>
 	</licenses>
 
+	<organization>
+		<name>Sitepark</name>
+		<url>https://www.sitepark.com</url>
+	</organization>
+
+	<developers>
+		<developer>
+			<id>veltrup@sitepark</id>
+			<name>Holger Veltrup</name>
+			<email>veltrup@sitepark.com</email>
+			<url>https://github.com/sitepark-veltrup</url>
+			<organization>Sitepark</organization>
+			<organizationUrl>https://www.sitepark.com</organizationUrl>
+			<roles>
+				<role>developer</role>
+			</roles>
+			<timezone>Europe/Berlin</timezone>
+		</developer>
+	</developers>
+
+	<properties>
+		<log4j.version>2.21.0</log4j.version>
+		<junit.version>5.10.0</junit.version>
+		<spotbugs.version>4.8.0</spotbugs.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.release>21</maven.compiler.release>
+		<gpg.skip>true</gpg.skip>
+	</properties>
+
+	<modules>
+		<module>extension-use-events</module>
+		<module>extension-use-graphql</module>
+	</modules>
+
 	<scm>
-		<connection>scm:git:git@github.com:sitepark-com/ies-extension-examples.git</connection>
-		<developerConnection>scm:git:git@github.com:sitepark-com/ies-extension-examples.git</developerConnection>
-		<url>https://github.com/sitepark-com/ies-extension-examples</url>
+		<connection>scm:git:git@github.com:sitepark/ies-extension-examples.git</connection>
+		<developerConnection>scm:git:git@github.com:sitepark/ies-extension-examples.git</developerConnection>
+		<url>https://github.com/sitepark/ies-extension-examples</url>
+		<tag>HEAD</tag>
 	</scm>
 
 	<repositories>
@@ -61,18 +71,17 @@
 
 	<dependencyManagement>
 		<dependencies>
-
 			<dependency>
 				<groupId>com.sitepark.ies</groupId>
 				<artifactId>ies-extension-api</artifactId>
-				<version>1.0-SNAPSHOT</version>
+				<version>1.0.0-SNAPSHOT</version>
 				<scope>provided</scope>
 			</dependency>
 
 			<dependency>
 				<groupId>com.sitepark.ies.extensions</groupId>
 				<artifactId>ies-graphql-extension-api</artifactId>
-				<version>1.0-SNAPSHOT</version>
+				<version>1.0.0-SNAPSHOT</version>
 				<scope>provided</scope>
 			</dependency>
 
@@ -138,11 +147,14 @@
 					<version>3.11.0</version>
 				</plugin>
 				<plugin>
+					<artifactId>maven-jar-plugin</artifactId>
+					<version>3.3.0</version>
+				</plugin>
+				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-surefire-plugin</artifactId>
 					<version>3.2.1</version>
 				</plugin>
-
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-source-plugin</artifactId>
@@ -156,10 +168,94 @@
 						</execution>
 					</executions>
 				</plugin>
-				<plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>3.6.0</version>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<version>3.1.0</version>
+				<executions>
+					<execution>
+						<id>sign-artifacts</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>3.0.1</version>
+				<configuration>
+					<scmCommentPrefix>ci(release): </scmCommentPrefix>
+					<tagNameFormat>@{project.version}</tagNameFormat>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-enforcer-plugin</artifactId>
+				<version>3.4.1</version>
+				<executions>
+					<execution>
+						<id>enforce-maven</id>
+						<goals>
+							<goal>enforce</goal>
+						</goals>
+						<configuration>
+							<rules>
+								<banDuplicatePomDependencyVersions />
+								<requireMavenVersion>
+									<version>3.8</version>
+								</requireMavenVersion>
+								<requireJavaVersion>
+									<version>21</version>
+								</requireJavaVersion>
+							</rules>
+						</configuration>
+					</execution>
+					<execution>
+						<id>verify-release</id>
+						<phase>none</phase>
+						<goals>
+							<goal>enforce</goal>
+						</goals>
+						<configuration>
+							<rules>
+								<requireReleaseDeps>
+									<failWhenParentIsSnapshot>false</failWhenParentIsSnapshot>
+									<message>No Snapshots Allowed!</message>
+								</requireReleaseDeps>
+								<requireReleaseDepsInPlugins
+									implementation="org.apache.maven.enforcer.rule.requireReleaseDepsInPlugins" />
+							</rules>
+							<fail>true</fail>
+						</configuration>
+					</execution>
+				</executions>
+				<dependencies>
+					<dependency>
+						<groupId>io.github.thefolle</groupId>
+						<artifactId>glowing-waffle</artifactId>
+						<version>1.2.0</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+			<plugin>
 					<groupId>org.jacoco</groupId>
 					<artifactId>jacoco-maven-plugin</artifactId>
-					<version>0.8.11</version>
+					<version>0.8.10</version>
 					<executions>
 						<execution>
 							<goals>
@@ -199,7 +295,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-checkstyle-plugin</artifactId>
-					<version>3.3.1</version>
+					<version>3.3.0</version>
 					<configuration>
 						<configLocation>checkstyle.xml</configLocation>
 						<encoding>UTF-8</encoding>
