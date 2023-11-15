@@ -38,7 +38,7 @@
 	</developers>
 
 	<properties>
-		<log4j.version>2.21.0</log4j.version>
+		<log4j.version>2.21.1</log4j.version>
 		<junit.version>5.10.1</junit.version>
 		<spotbugs.version>4.8.0</spotbugs.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -215,7 +215,7 @@
 						</goals>
 						<configuration>
 							<rules>
-								<banDuplicatePomDependencyVersions />
+								<banDuplicatePomDependencyVersions/>
 								<requireMavenVersion>
 									<version>3.8</version>
 								</requireMavenVersion>
@@ -237,8 +237,7 @@
 									<failWhenParentIsSnapshot>false</failWhenParentIsSnapshot>
 									<message>No Snapshots Allowed!</message>
 								</requireReleaseDeps>
-								<requireReleaseDepsInPlugins
-									implementation="org.apache.maven.enforcer.rule.requireReleaseDepsInPlugins" />
+								<requireReleaseDepsInPlugins implementation="org.apache.maven.enforcer.rule.requireReleaseDepsInPlugins"/>
 							</rules>
 							<fail>true</fail>
 						</configuration>
