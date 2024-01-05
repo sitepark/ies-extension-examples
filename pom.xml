@@ -38,7 +38,7 @@
 	</developers>
 
 	<properties>
-		<log4j.version>2.22.0</log4j.version>
+		<log4j.version>2.22.1</log4j.version>
 		<junit.version>5.10.1</junit.version>
 		<spotbugs.version>4.8.3</spotbugs.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
