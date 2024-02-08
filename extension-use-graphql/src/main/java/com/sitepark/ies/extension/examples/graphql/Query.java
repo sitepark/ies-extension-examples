@@ -4,8 +4,7 @@ import graphql.kickstart.tools.GraphQLQueryResolver;
 
 public class Query implements GraphQLQueryResolver {
 
-	public String ping() {
-		return "pong";
-	}
-
+  public String ping() {
+    return "pong";
+  }
 }
