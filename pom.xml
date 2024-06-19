@@ -344,7 +344,8 @@
 
 				<!-- https://spotbugs.readthedocs.io/en/latest/maven.html -->
 				<dependencies>
-					<!-- overwrite dependency on spotbugs if you want to specify the version of spotbugs -->
+					<!-- overwrite dependency on spotbugs if you want to specify the version of
+					spotbugs -->
 					<dependency>
 						<groupId>com.github.spotbugs</groupId>
 						<artifactId>spotbugs</artifactId>
@@ -388,4 +389,24 @@
 		</plugins>
 		<outputDirectory>${project.build.directory}/classes</outputDirectory>
 	</build>
+	<profiles>
+		<profile>
+			<id>publish-release</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.sonatype.central</groupId>
+						<artifactId>central-publishing-maven-plugin</artifactId>
+						<version>0.5.0</version>
+						<extensions>true</extensions>
+						<configuration>
+							<publishingServerId>central</publishingServerId>
+							<autoPublish>true</autoPublish>
+							<waitUntil>published</waitUntil>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 </project>
