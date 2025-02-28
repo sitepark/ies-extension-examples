@@ -11,11 +11,11 @@ public class UseEventsExtension implements Extension {
 
   private static final Logger LOGGER = LogManager.getLogger();
 
-  private final UserPurgedSubsciber userPurgeSubsciber;
+  private final UserPurgedSubsciber userPurgeSubscriber;
 
   @Inject
-  protected UseEventsExtension(UserPurgedSubsciber userPurgeSubsciber) {
-    this.userPurgeSubsciber = userPurgeSubsciber;
+  protected UseEventsExtension(UserPurgedSubsciber userPurgeSubscriber) {
+    this.userPurgeSubscriber = userPurgeSubscriber;
   }
 
   @ConfigureFactory
@@ -30,7 +30,7 @@ public class UseEventsExtension implements Extension {
     if (LOGGER.isInfoEnabled()) {
       LOGGER.info("initialize {}", this.getClass().getSimpleName());
     }
-    this.userPurgeSubsciber.subscribe();
+    this.userPurgeSubscriber.subscribe();
   }
 
   @Override
@@ -38,6 +38,6 @@ public class UseEventsExtension implements Extension {
     if (LOGGER.isInfoEnabled()) {
       LOGGER.info("destroy {}", this.getClass().getSimpleName());
     }
-    this.userPurgeSubsciber.unsubscribe();
+    this.userPurgeSubscriber.unsubscribe();
   }
 }
