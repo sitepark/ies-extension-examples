@@ -61,6 +61,7 @@
 
 	<dependencyManagement>
 		<dependencies>
+
 			<dependency>
 				<groupId>com.sitepark.ies</groupId>
 				<artifactId>ies-extension-api</artifactId>
@@ -84,27 +85,24 @@
 
 			<dependency>
 				<groupId>org.apache.logging.log4j</groupId>
-				<artifactId>log4j-api</artifactId>
+				<artifactId>log4j-bom</artifactId>
 				<version>${log4j.version}</version>
-				<scope>provided</scope>
+				<type>pom</type>
+				<scope>import</scope>
 			</dependency>
 			<dependency>
-				<groupId>org.junit.jupiter</groupId>
-				<artifactId>junit-jupiter-api</artifactId>
+				<groupId>org.junit</groupId>
+				<artifactId>junit-bom</artifactId>
 				<version>${junit.version}</version>
-				<scope>test</scope>
+				<type>pom</type>
+				<scope>import</scope>
 			</dependency>
 			<dependency>
-				<groupId>org.junit.jupiter</groupId>
-				<artifactId>junit-jupiter-engine</artifactId>
-				<version>${junit.version}</version>
-				<scope>test</scope>
-			</dependency>
-			<dependency>
-				<groupId>org.junit.jupiter</groupId>
-				<artifactId>junit-jupiter-params</artifactId>
-				<version>${junit.version}</version>
-				<scope>test</scope>
+				<groupId>org.assertj</groupId>
+				<artifactId>assertj-bom</artifactId>
+				<version>3.27.6</version>
+				<type>pom</type>
+				<scope>import</scope>
 			</dependency>
 			<dependency>
 				<groupId>org.mockito</groupId>
@@ -116,12 +114,6 @@
 				<groupId>org.junit.platform</groupId>
 				<artifactId>junit-platform-runner</artifactId>
 				<version>1.14.0</version>
-				<scope>test</scope>
-			</dependency>
-			<dependency>
-				<groupId>org.hamcrest</groupId>
-				<artifactId>hamcrest-library</artifactId>
-				<version>3.0</version>
 				<scope>test</scope>
 			</dependency>
 		</dependencies>
@@ -325,7 +317,7 @@
 
 						<!-- apply a specific flavor of google-java-format and reflow long strings -->
 						<googleJavaFormat>
-							<version>1.19.2</version>
+							<version>1.31.0</version>
 							<style>GOOGLE</style>
 							<reflowLongStrings>true</reflowLongStrings>
 							<formatJavadoc>false</formatJavadoc>
