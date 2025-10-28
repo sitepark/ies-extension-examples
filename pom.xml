@@ -115,7 +115,7 @@
 			<dependency>
 				<groupId>org.junit.platform</groupId>
 				<artifactId>junit-platform-runner</artifactId>
-				<version>1.13.4</version>
+				<version>1.14.0</version>
 				<scope>test</scope>
 			</dependency>
 			<dependency>
@@ -173,7 +173,7 @@
 					<dependency>
 						<groupId>me.fabriciorby</groupId>
 						<artifactId>maven-surefire-junit5-tree-reporter</artifactId>
-						<version>1.4.0</version>
+						<version>1.5.1</version>
 					</dependency>
 				</dependencies>
 			</plugin>
@@ -228,7 +228,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-enforcer-plugin</artifactId>
-				<version>3.6.1</version>
+				<version>3.6.2</version>
 				<dependencies>
 					<dependency>
 						<groupId>io.github.thefolle</groupId>
@@ -276,7 +276,7 @@
 			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
-				<version>0.8.13</version>
+				<version>0.8.14</version>
 				<executions>
 					<execution>
 						<goals>
@@ -330,7 +330,6 @@
 							<reflowLongStrings>true</reflowLongStrings>
 							<formatJavadoc>false</formatJavadoc>
 						</googleJavaFormat>
-						<formatAnnotations></formatAnnotations>
 					</java>
 					<pom>
 						<!-- These are the defaults, you can override if you want -->
@@ -357,7 +356,7 @@
 			<plugin>
 				<groupId>com.github.spotbugs</groupId>
 				<artifactId>spotbugs-maven-plugin</artifactId>
-				<version>4.9.6.0</version>
+				<version>4.9.8.1</version>
 				<configuration>
 					<effort>Max</effort>
 					<threshold>Low</threshold>
@@ -371,7 +370,7 @@
 					<dependency>
 						<groupId>com.github.spotbugs</groupId>
 						<artifactId>spotbugs</artifactId>
-						<version>4.9.6</version>
+						<version>4.9.8</version>
 					</dependency>
 				</dependencies>
 				<executions>
@@ -386,7 +385,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-pmd-plugin</artifactId>
-				<version>3.27.0</version>
+				<version>3.28.0</version>
 				<configuration>
 					<rulesets>
 						<ruleset>pmd-ruleset.xml</ruleset>
