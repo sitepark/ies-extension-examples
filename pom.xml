@@ -121,6 +121,15 @@
 		</dependencies>
 	</dependencyManagement>
 
+	<dependencies>
+		<dependency>
+			<groupId>org.jspecify</groupId>
+			<artifactId>jspecify</artifactId>
+			<version>1.0.1</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+
 	<repositories>
 		<repository>
 			<releases>
