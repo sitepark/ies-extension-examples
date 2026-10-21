@@ -3,7 +3,7 @@ package com.sitepark.ies.extension.examples.useevents;
 import com.sitepark.ies.extension.api.annotations.Subscribe;
 import com.sitepark.ies.extension.api.events.UserPurged;
 import com.sitepark.ies.extension.api.port.EventBusSubscriber;
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

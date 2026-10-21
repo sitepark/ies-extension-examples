@@ -2,7 +2,7 @@ package com.sitepark.ies.extension.examples.graphql;
 
 import com.sitepark.ies.extensions.graphql.api.GraphQLSchemaExtension;
 import com.sitepark.ies.extensions.graphql.api.GraphQLSchemaExtensionConfiguration;
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 
 public class GraphQLSchemaExtensionExample implements GraphQLSchemaExtension {
 

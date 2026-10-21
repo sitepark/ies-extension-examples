@@ -3,7 +3,7 @@ package com.sitepark.ies.extension.examples.graphql;
 import com.sitepark.ies.extension.api.ConfigurationContext;
 import com.sitepark.ies.extension.api.Extension;
 import com.sitepark.ies.extension.api.annotations.ConfigureFactory;
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
